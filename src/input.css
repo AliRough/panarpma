@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.side-item {
+  @apply w-40;
+}
+
+.side-item img {
+  @apply w-full aspect-[5/3] overflow-hidden  object-cover rounded-md;
+}
+
+.side-item span {
+  @apply text-sm 
+}
