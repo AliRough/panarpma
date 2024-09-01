@@ -1,6 +1,6 @@
 let container = document.querySelector('.pano-image')
 let panorama = new PANOLENS.ImagePanorama(
-  '../public/image/home-alireza/vrodisakhtman.jpg'
+  '../public/image/20240831_214506_215.jpg'
 )
 let panorama1 = new PANOLENS.ImagePanorama(
   './../public/image/home-alireza/parking.jpg'
@@ -30,24 +30,24 @@ viewer.add(panorama3)
 viewer.add(panorama4)
 
 panorama3.add(infospot)
-panorama.link(panorama1, new THREE.Vector3(-8860, 2060, 500), 600)
-// '../public/image/location.gif'
+// panorama.link(panorama1, new THREE.Vector3(-8860, 2060, 500), 600)
+// ;('../public/image/location.gif')
 
-panorama.link(
-  panorama3,
-  new THREE.Vector3(-2000, -2000, -5000),
-  400,
-  '../public/image/download (1).png'
-)
-panorama.link(
-  panorama4,
-  new THREE.Vector3(1000, -2000, -5000),
-  400,
-  '../public/image/download (1).png'
-)
+// panorama.link(
+//   panorama3,
+//   new THREE.Vector3(-2000, -2000, -5000),
+//   400,
+//   '../public/image/location.gif'
+// )
+// panorama.link(
+//   panorama4,
+//   new THREE.Vector3(1000, -2000, -5000),
+//   400,
+//   '../public/image/download (1).png'
+// )
 
-panorama1.link(panorama2, new THREE.Vector3(-2000, 0, 0))
-panorama2.link(panorama3, new THREE.Vector3(-2000, 1250, 0))
+// panorama1.link(panorama2, new THREE.Vector3(-2000, 0, 0))
+// panorama2.link(panorama3, new THREE.Vector3(-2000, 1250, 0))
 
 const clickTest = document.querySelector('#click-test')
 clickTest.addEventListener('click', (e) => {
@@ -61,5 +61,12 @@ clickTest.addEventListener('click', (e) => {
 })
 
 const closeSideBarHandler = (e) => {
-  viewer.setPanorama(panorama)
+  console.log(viewer.OrbitControls.autoRotate)
+  // viewer.OrbitControls.screenSpacePanning=false
+  viewer.OrbitControls.autoRotate = true
+
+  console.log(viewer.camera.fov)
+
+  // viewer.handlerWindowResize()
+  // viewer.setPanorama(panorama)
 }
